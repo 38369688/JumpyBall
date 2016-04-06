@@ -18,7 +18,7 @@ import java.awt.event.MouseEvent;
  */
 class space extends Environment {
     
-    private Ball ball;
+    private Character ball;
     
     public space() {
         
