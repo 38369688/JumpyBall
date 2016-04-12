@@ -5,6 +5,8 @@
  */
 package jumpyball;
 
+import environment.Velocity;
+import images.ResourceTools;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -14,21 +16,29 @@ import java.awt.Image;
  */
 class Character {
     
-    public Character(int x, int y, Image image){
+    public Character(int x, int y, Velocity velocity, Image image){
         this.x = x;
         this.y = y;
+        this.velocity = velocity;
         this.image = image;
-               
+        
     }
     
     public void draw(Graphics graphics){
-        graphics.drawImage(image, x, y, null);
+       graphics.drawImage(image, x, y, null);
+    }
+    
+    public void move (){
+        x += getVelocity().x;
+        y += getVelocity().y;
     }
     
 //<editor-fold defaultstate="collapsed" desc="Proprties">
+    private Velocity velocity;
     private int x;
     private int y;
     private Image image;
+    
     
     /**
      * @return the x
@@ -71,7 +81,23 @@ class Character {
     public void setImage(Image image) {
         this.image = image;
     }
-//</editor-fold>
     
+    
+//    /**
+//     * @return the velocity
+//     */
+//    public Velocity getVelocity() {
+//        return velocity;
+//    }
+
+    /**
+     * @param velocity the velocity to set
+     */
+    public void addXVelocity(int xVelocity) {
+        this.velocity.x += xVelocity;
+    }
+    
+//</editor-fold>
+
     
 }

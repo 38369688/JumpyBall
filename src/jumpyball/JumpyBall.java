@@ -18,7 +18,7 @@ public class JumpyBall {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ApplicationStarter.run("Goooo!!!", new space());
+        ApplicationStarter.run("Goooo!!!", new Space());
                
     }
     
