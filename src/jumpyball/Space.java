@@ -5,20 +5,21 @@
  */
 /*Needs:
  -Movement from left to right
- - Can move you character
+    -Can move you character V
  -continiusly jumping up
- -You don't need to hit any bottons to jump it will do it continiusly
+    -You don't need to hit any bottons to jump it will do it continiusly
  -able to puase, and return
- - pause menu
+     - pause menu
  -Scoring/hieght counting methods
- - you gain points for each platform you jump up
+    - you gain points for each platform you jump up
  -gravity
- - after a certain amount of time you character will start falling and it will
- fall faster the longer it has been falling
+    - after a certain amount of time you character will start falling and it will
+    fall faster the longer it has been falling
  -start menu
- -chose you character
+     -chose you character
  -counter for the height that you have gone through
- -when you hit a certain height it will change the background to the next level
+    -when you hit a certain height it will change the background to the next level
+ -Add platforms
  */
 package jumpyball;
 
@@ -30,6 +31,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 /**
  *
@@ -38,16 +40,20 @@ import java.awt.event.MouseEvent;
 class Space extends Environment {
 
     private Character ball;
+    private ArrayList<Platform> platforms;
 
     public Space() {
+        platforms = new ArrayList<>();
+        platforms.add(new jumpyball.Platform());
+        
+        
         ball = new Character(450, 300, new Velocity(0, 0), ResourceTools.loadImageFromResource("jumpyball/character1.jpg"));
     }
-
     @Override
     public void initializeEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("jumpyball/stage_1_city.jpg"));
     }
-
+    
     @Override
     public void timerTaskHandler() {
         if (ball != null) {
@@ -57,11 +63,11 @@ class Space extends Environment {
 
     @Override
     public void keyPressedHandler(KeyEvent e) {
-        if ((e.getKeyCode() == KeyEvent.VK_LEFT) || (e.getKeyCode() == KeyEvent.VK_A)){
+        if ((e.getKeyCode() == KeyEvent.VK_RIGHT) || (e.getKeyCode() == KeyEvent.VK_A)) {
             ball.addXVelocity(1);
-        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+        } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             ball.addXVelocity(-1);
-        } 
+        }
 
     }
 

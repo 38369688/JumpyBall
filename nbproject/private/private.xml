@@ -5,7 +5,7 @@
             <url>src/jumpyball/Character.java</url>
             <bookmark id="1">
                 <name/>
-                <line>40</line>
+                <line>42</line>
                 <key/>
             </bookmark>
         </file>
@@ -14,6 +14,7 @@
         <group>
             <file>file:/Users/alextsai/NetBeansProjects/JumpyBall/src/jumpyball/Space.java</file>
             <file>file:/Users/alextsai/NetBeansProjects/JumpyBall/src/jumpyball/Character.java</file>
+            <file>file:/Users/alextsai/NetBeansProjects/JumpyBall/src/jumpyball/Platform.java</file>
         </group>
     </open-files>
 </project-private>

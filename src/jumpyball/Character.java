@@ -29,11 +29,13 @@ class Character {
     }
     
     public void move (){
-        x += getVelocity().x;
-        y += getVelocity().y;
+        x += velocity.x;
+        y += velocity.y;
     }
     
 //<editor-fold defaultstate="collapsed" desc="Proprties">
+    private int maxVelocity = 7;
+    
     private Velocity velocity;
     private int x;
     private int y;
@@ -95,6 +97,11 @@ class Character {
      */
     public void addXVelocity(int xVelocity) {
         this.velocity.x += xVelocity;
+        if (this.velocity.x > maxVelocity) {
+            this.velocity.x = maxVelocity;
+        } else if (this.velocity.x < -maxVelocity){
+            this.velocity.x = -maxVelocity;
+        }
     }
     
 //</editor-fold>
